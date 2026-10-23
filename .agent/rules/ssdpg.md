@@ -25,6 +25,7 @@ This is a design repository. It holds decisions and specifications and no code. 
 3. A newer ADR may cite older ADRs and never the reverse.
 4. Documents are accepted one at a time, never in groups. A document is not accepted before the older ADRs it cites.
 5. At the start of each work session, list the documents marked Proposed or Draft, oldest first, so the owner can accept them one at a time.
+6. Draft no new ADR while five ADRs are Proposed, unless the owner asks for one. The owner is the only reviewer, so a long queue only goes stale.
 
 ## Talking to the owner
 
