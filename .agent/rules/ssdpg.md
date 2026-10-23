@@ -26,6 +26,7 @@ This is a design repository. It holds decisions and specifications and no code. 
 4. Documents are accepted one at a time, never in groups. A document is not accepted before the older ADRs it cites.
 5. At the start of each work session, list the documents marked Proposed or Draft, oldest first, so the owner can accept them one at a time.
 6. Draft no new ADR while five ADRs are Proposed, unless the owner asks for one. The owner is the only reviewer, so a long queue only goes stale.
+7. Mark a blueprint Implemented only after checking the StarSystem code against each of its acceptance criteria, and only with the owner's agreement. When the last piece of a feature lands in the code, check its blueprint then, so the status does not lag behind the code.
 
 ## Talking to the owner
 
