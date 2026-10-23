@@ -1,0 +1,24 @@
+# Feature Blueprints
+
+> A blueprint describes one feature before it is built, with the problem it solves and what counts as done.
+
+Every feature gets a blueprint, whether it is already built or only planned. A decision that other code or data depends on goes in an ADR, and the blueprint links to it. Small fixes and refactors need no blueprint.
+
+## Conventions
+
+| Rule | Convention |
+| :-- | :-- |
+| File name | `short_snake_case_title.md` |
+| Template | Copy [`_template.md`](_template.md) |
+| Diagrams | Mermaid blocks |
+| Status | `Draft`, `Accepted`, `Implemented`, `Superseded`. A stub says so in its first paragraph. |
+| Rests on | The ADRs the blueprint depends on, named in its header. It can be accepted once they are all Accepted. |
+| Editing | A blueprint can be edited until it is Implemented. After that, write a new one and mark the old one Superseded. |
+
+Implemented means the code meets every acceptance criterion in the blueprint.
+
+## Index
+
+| Blueprint | Status | Summary |
+| :-- | :-- | :-- |
+| None yet | | |
