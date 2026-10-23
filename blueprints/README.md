@@ -13,6 +13,7 @@ Every feature gets a blueprint, whether it is already built or only planned. A d
 | Diagrams | Mermaid blocks |
 | Status | `Draft`, `Accepted`, `Implemented`, `Superseded`. A stub says so in its first paragraph. |
 | Rests on | The ADRs the blueprint depends on, named in its header. It can be accepted once they are all Accepted. |
+| Contract | A blueprint for a contract says so in its first paragraph and gives the contract's version number in a header line named Version. |
 | Editing | A blueprint can be edited until it is Implemented. After that, write a new one and mark the old one Superseded. |
 
 Implemented means the code meets every acceptance criterion in the blueprint.

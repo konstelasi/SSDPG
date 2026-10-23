@@ -85,6 +85,8 @@ A Proposed ADR can be edited. An Accepted one cannot, and a decision that change
 
 A glossary entry names a class, field or command only when the ADR that governs the term uses that exact name. Implementation names change without any ADR being touched, so a name nothing backs would drift unnoticed.
 
+Everything StarSystem serves to code written by others is a contract. That covers the content API, the module manifest, themes and the update feed. Each contract has its own blueprint with a version number in its header, and a JSON Schema in [`schemas/`](schemas/) wherever its shape can be written that way. An ADR sets how each contract may change.
+
 These documents say what StarSystem is and why. They do not give the order in which it is built, and they carry no phase, stage or step labels. A reader who was not in the planning cannot tell what such a label refers to.
 
 ## Repository structure
