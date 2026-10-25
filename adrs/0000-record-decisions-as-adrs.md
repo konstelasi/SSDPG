@@ -1,8 +1,9 @@
 # 0000 Record decisions as ADRs
 
-- **Status:** Proposed
-- **Created:** 2026-10-27
-- **Ruled:** not yet
+- **Status:** Accepted
+- **Created:** 2026-10-23
+- **Ruled:** 2026-10-27
+- **Accepted:** 2026-10-27
 
 ## Context
 

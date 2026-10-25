@@ -19,4 +19,4 @@ An ADR records one decision, the situation that called for it and what follows f
 
 | ADR | Status | Summary |
 | :-- | :-- | :-- |
-| [`0000-record-decisions-as-adrs.md`](0000-record-decisions-as-adrs.md) | Proposed | Decisions that others depend on are recorded as ADRs, the documents outrank the code, and only the owner accepts. |
+| [`0000-record-decisions-as-adrs.md`](0000-record-decisions-as-adrs.md) | Accepted | Decisions that others depend on are recorded as ADRs, the documents outrank the code, and only the owner accepts. |
