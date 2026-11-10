@@ -14,7 +14,7 @@ This is a design repository. It holds decisions and specifications and no applic
 2. Write from decisions and constraints, never from the existing StarSystem code. Do not describe the code as the design.
 3. Never name a private file, a private repository or a label that only means something in private notes.
 4. Start from `adrs/_template.md` or `blueprints/_template.md`. Read the matching index first so numbers and names stay unique.
-5. Check each document against StarDust's ADRs in SDDPG before it is final. Use `git fetch` and `git show origin/main:path` in the SDDPG clone, never its working tree. A needed StarDust change is an SDDPG ADR first, and the StarDust repository itself is on hold.
+5. Treat StarDust as one dependency among others. Describe StarSystem's own behaviour, and when a document relies on something StarDust does, say it in a sentence. Never cite StarDust's ADRs and never check a document against SDDPG. When the problem is StarDust's, or the design is better that way, the change is made in StarDust in a measured way, as StarDust's own work.
 6. A glossary entry may cite a class, field or command only when the ADR that governs the term uses that exact name.
 7. Never write a build order, and never put a phase, stage, step or milestone label in a document. Say what the feature is and when it counts as done. The order of work lives outside this repository.
 8. Run `node scripts/check.mjs` before every commit and fix what it reports. It does not check the glossary rule or whether a document says what the owner ruled, so read for those.
