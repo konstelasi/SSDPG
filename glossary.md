@@ -25,6 +25,10 @@ The website side of a site, a module that turns entries into pages. It covers th
 
 A secret that an outside app sends with each request to say who it is, for example a booking form on another website that saves reservations as entries. A key stands for an account that is not a person.
 
+### Label field
+
+The field of the linked model whose value names a linked entry, such as the name of an author. See the [relation field blueprint](blueprints/relation_field.md).
+
 ### Module
 
 A folder that holds one self-contained addition to StarSystem, described by a manifest that StarSystem reads.
@@ -40,3 +44,7 @@ The list of which models are public and which checkbox field publishes an entry 
 ### Published box
 
 The checkbox field that a model names as its published switch. An entry with the box unticked is a draft.
+
+### Relation field
+
+A field that links an entry to entries of another model, such as a post's author pointing at an entry in Authors. It holds one entry, or several when the field allows it. See the [relation field blueprint](blueprints/relation_field.md).
