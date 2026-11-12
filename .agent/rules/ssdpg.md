@@ -28,6 +28,7 @@ This is a design repository. It holds decisions and specifications and no applic
 5. At the start of each work session, run `node scripts/check.mjs`. It lists the documents marked Proposed or Draft, oldest first, so the owner can accept them one at a time.
 6. Draft no new ADR while five ADRs are Proposed, unless the owner asks for one. The owner is the only reviewer, so a long queue only goes stale.
 7. Mark a blueprint Implemented only after checking the StarSystem code against each of its acceptance criteria, and only with the owner's agreement. When the last piece of a feature lands in the code, check its blueprint then, so the status does not lag behind the code.
+8. A blueprint's "Not decided yet" section lists only what the owner still has to rule on in that blueprint. A question that another document will settle goes under Non-goals with a pointer to that document. The section is empty when the blueprint is accepted, and `scripts/check.mjs` fails an Accepted or Implemented blueprint that still has items there.
 
 ## Talking to the owner
 

@@ -75,7 +75,8 @@ for (const name of adrIndex.keys()) if (!adrFiles.includes(`adrs/${name}`)) fail
 const blueprintIndex = indexRows('blueprints/README.md');
 const blueprints = blueprintFiles.map((file) => {
   const text = read(file);
-  return { file, name: file.slice(11), title: text.match(/^# (.+)$/m)?.[1] ?? '', status: field(text, 'Status'), created: field(text, 'Created'), restsOn: field(text, 'Rests on') };
+  const undecided = text.split(/^## /m).find((s) => s.startsWith('Not decided yet\n'))?.slice('Not decided yet'.length).trim();
+  return { file, name: file.slice(11), title: text.match(/^# (.+)$/m)?.[1] ?? '', status: field(text, 'Status'), created: field(text, 'Created'), restsOn: field(text, 'Rests on'), undecided };
 });
 
 for (const bp of blueprints) {
@@ -89,6 +90,7 @@ for (const bp of blueprints) {
     if (!adr) fail(file, `rests on ADR ${number}, which does not exist`);
     else if (['Accepted', 'Implemented'].includes(bp.status) && adr.status !== 'Accepted') fail(file, `is ${bp.status} but rests on ADR ${number}, which is ${adr.status}`);
   }
+  if (['Accepted', 'Implemented'].includes(bp.status) && bp.undecided) fail(file, `is ${bp.status} but still has items under "Not decided yet"`);
   if (!blueprintIndex.has(bp.name)) fail(file, 'has no row in blueprints/README.md');
   else if (blueprintIndex.get(bp.name) !== bp.status) fail(file, `index says "${blueprintIndex.get(bp.name)}" but the header says "${bp.status}"`);
 }

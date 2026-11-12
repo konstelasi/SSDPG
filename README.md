@@ -73,6 +73,7 @@ Every document starts as Proposed (an ADR) or Draft (anything else). Only the pr
 - A decision the owner has already ruled on is drafted as Proposed, with the date of that ruling in its Ruled line. The owner checks that the text says what was ruled.
 - A decision that is still open is settled in conversation first, and the ADR is written from that.
 - A blueprint is accepted once every ADR it rests on is Accepted.
+- A blueprint is accepted with nothing left under "Not decided yet". A question that another document will settle moves to the blueprint's Non-goals, with a pointer to that document.
 - No document is accepted before the older ADRs it cites.
 
 The documents waiting for acceptance are the ones marked Proposed or Draft in the indexes, and they are listed, oldest first, at the start of each working session.

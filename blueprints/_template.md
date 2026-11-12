@@ -24,9 +24,9 @@ Observable, testable conditions that must hold for the feature to count as done.
 
 The approach in outline, covering the main parts, how data moves between them and the trade-offs that matter. Mermaid diagrams are welcome. Full implementation detail belongs in the code or in an ADR.
 
-## Open questions
+## Not decided yet
 
-Decisions still unmade that block or would change the work.
+Decisions the owner still has to rule on in this blueprint. The section is empty when the blueprint is accepted. A question that another document will settle goes under Non-goals, with a pointer to that document.
 
 ## Related documents
 
