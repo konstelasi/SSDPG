@@ -4,6 +4,7 @@
 - **Created:** 2026-10-23
 - **Ruled:** 2026-10-27
 - **Accepted:** 2026-10-27
+- **Amended:** 2026-11-13
 
 ## Context
 
@@ -13,11 +14,11 @@ A decision that exists only in conversation is easy to lose and easy to contradi
 
 Decisions are recorded as Architecture Decision Records in `adrs/`, one decision per file, numbered in the order they are written and shaped by `adrs/_template.md`.
 
-An ADR is written only when something outside the decision's own code depends on it. That means other people's code such as modules, themes and clients of the content API, data already stored on an install, the update and trust path, or a security boundary. Any other decision belongs in the blueprint it affects, under its technical sketch or open questions.
+An ADR is written only when something outside the decision's own code depends on it. That means other people's code such as modules, themes and clients of the content API, data already stored on an install, the update and trust path, or a security boundary. Any other decision belongs in the blueprint it affects.
 
 The design documents outrank the code. When the two disagree, the document is right until an ADR changes it. The code is brought to the document, and a difference that proves impossible or too costly to close comes back as a new ADR and is never dropped quietly.
 
-Only the project owner moves a document to Accepted. A Proposed ADR can be edited and an Accepted one cannot, so a decision that changes is a new ADR that supersedes the old one. A newer ADR may cite older ADRs and never the reverse.
+Only the project owner moves a document to Accepted. A Proposed ADR can be edited freely. An Accepted ADR can be amended to correct or clarify it, as long as the decision itself does not change, meaning that anything which followed the old text still follows the new one. An amendment adds an Amended line with its date to the header, and a later amendment updates that date. An amendment is made with care. Its benefit is weighed against what it could break, such as the documents, code and modules that cite or follow the old text, and each of those is checked before the change is made. When the risk outweighs the benefit, or the decision changes in substance, the change is a new ADR that supersedes the old one. A newer ADR may cite older ADRs and never the reverse.
 
 Documents are accepted one at a time. A decision the owner has already ruled on is drafted as Proposed with the date of the ruling in its Ruled line, and the owner checks that the text says what was ruled. A decision that is still open is settled in conversation first. A blueprint is accepted once every ADR it rests on is Accepted, and no document is accepted before the older ADRs it cites.
 
