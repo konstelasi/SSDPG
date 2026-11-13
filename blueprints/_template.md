@@ -4,6 +4,10 @@
 - **Created:** YYYY-MM-DD
 - **Rests on:** the ADR numbers it depends on, or none
 
+## At a glance
+
+A diagram that shows the feature at once, top to bottom, then a few sentences that define the terms the diagram uses. Under them, a short list of the decisions the owner is asked to accept, each followed by the id of the criterion that states it. Keep all of it to one screen.
+
 ## Problem
 
 Why does this feature need to exist, and what does it fix or make possible?
@@ -18,7 +22,7 @@ What it deliberately leaves out.
 
 ## Acceptance criteria
 
-Observable, testable conditions that must hold for the feature to count as done. Number them so another document can cite one.
+Observable, testable conditions that must hold for the feature to count as done. Group them under headings and give each row an id made of a letter for its group and a number, such as S3, so another document can cite one. A removed row leaves a gap, and an id is never reused or shifted. Use a table where the content is condition and result.
 
 ## Technical sketch
 

@@ -18,6 +18,7 @@ This is a design repository. It holds decisions and specifications and no applic
 6. A glossary entry may cite a class, field or command only when the ADR that governs the term uses that exact name.
 7. Never write a build order, and never put a phase, stage, step or milestone label in a document. Say what the feature is and when it counts as done. The order of work lives outside this repository.
 8. Run `node scripts/check.mjs` before every commit and fix what it reports. It does not check the glossary rule or whether a document says what the owner ruled, so read for those.
+9. Give each acceptance criterion an id made of a letter for its group and a number, such as S3. A removed criterion leaves a gap, and an id is never reused or shifted, because other documents cite them.
 
 ## Statuses
 
