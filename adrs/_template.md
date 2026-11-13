@@ -18,5 +18,6 @@ What becomes easier and what becomes harder. Include the trade-offs, the constra
 
 <!--
 Ruled is the day the owner decided it, which may be before the text was written.
-When the owner accepts the ADR, change Status to Accepted and add an Accepted line with that date. Nothing else in an Accepted ADR changes afterwards.
+When the owner accepts the ADR, change Status to Accepted and add an Accepted line with that date.
+Later, an amendment that corrects or clarifies the text without changing the decision adds an Amended line with its date under the Accepted line, and a repeat amendment updates that date. A change to the decision itself, or an amendment whose risk outweighs its benefit, is a new ADR that supersedes this one.
 -->

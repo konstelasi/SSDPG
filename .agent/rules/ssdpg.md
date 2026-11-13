@@ -22,7 +22,7 @@ This is a design repository. It holds decisions and specifications and no applic
 ## Statuses
 
 1. Only the owner moves a document to Accepted. Draft every ADR as Proposed and every blueprint as Draft, and never set Accepted yourself.
-2. A Proposed ADR can be edited. An Accepted one cannot, and a reversal is a new ADR that supersedes it.
+2. A Proposed ADR can be edited. An Accepted one can be amended to correct or clarify it, as long as the decision itself does not change, meaning anything that followed the old text still follows the new one. An amendment adds or updates an Amended line with the date in the header. Before amending, find every document that cites or rests on the ADR and check that each still reads true, and weigh that risk against the benefit. A change to the decision itself, or an amendment whose risk outweighs its benefit, is a new ADR that supersedes it. A small change with little risk never is.
 3. A newer ADR may cite older ADRs and never the reverse.
 4. Documents are accepted one at a time, never in groups. A document is not accepted before the older ADRs it cites.
 5. At the start of each work session, run `node scripts/check.mjs`. It lists the documents marked Proposed or Draft, oldest first, so the owner can accept them one at a time.

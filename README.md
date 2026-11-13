@@ -82,7 +82,7 @@ The documents waiting for acceptance are the ones marked Proposed or Draft in th
 
 Documents are Markdown, and diagrams are Mermaid blocks. Document files are named in lowercase with underscores, such as `architecture_blueprint.md`, and ADRs as `NNNN-short-title.md`.
 
-A Proposed ADR can be edited. An Accepted one cannot, and a decision that changes is a new ADR that supersedes the old one. A newer ADR may cite older ones and never the reverse, so the ADRs form a chain with no loops.
+A Proposed ADR can be edited. An Accepted one can be amended to correct or clarify it, as long as the decision itself does not change, and it then carries an Amended line with the date. An amendment is weighed first, its benefit against what it could break in the documents that cite the ADR. When the risk outweighs the benefit, or the decision changes in substance, the change is a new ADR that supersedes the old one. A newer ADR may cite older ones and never the reverse, so the ADRs form a chain with no loops.
 
 A glossary entry names a class, field or command only when the ADR that governs the term uses that exact name. Implementation names change without any ADR being touched, so a name nothing backs would drift unnoticed.
 

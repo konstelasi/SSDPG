@@ -2,7 +2,7 @@
 
 > The log of why StarSystem's important decisions were made.
 
-An ADR records one decision, the situation that called for it and what follows from it. Once a decision is accepted its ADR is not edited, so a reader years later sees what was decided and why. [ADR 0000](0000-record-decisions-as-adrs.md) sets when a decision gets an ADR and who accepts it.
+An ADR records one decision, the situation that called for it and what follows from it. Once a decision is accepted its ADR changes only by an amendment that corrects or clarifies it, dated in its Amended line, so a reader years later sees what was decided and why. [ADR 0000](0000-record-decisions-as-adrs.md) sets when a decision gets an ADR and who accepts it.
 
 ## Conventions
 
@@ -11,8 +11,8 @@ An ADR records one decision, the situation that called for it and what follows f
 | File name | `NNNN-short-title.md`, for example `0000-record-decisions-as-adrs.md` |
 | Template | Copy [`_template.md`](_template.md) |
 | Status | `Proposed`, then `Accepted`. Later `Rejected`, `Deprecated` or `Superseded`. |
-| Editing | A Proposed ADR can be edited. An Accepted ADR cannot. |
-| Reversal | Write a new ADR that supersedes the old one, and change only the old one's status. |
+| Editing | A Proposed ADR can be edited. An Accepted ADR can be amended to correct or clarify it, as long as the decision itself does not change, and it then carries an Amended line with the date. Weigh the benefit against what it could break in the documents that cite it. |
+| Reversal | When the decision itself changes, or an amendment would risk more than it gains, write a new ADR that supersedes the old one, and change only the old one's status. |
 | Citing | A newer ADR may cite older ones and never the reverse. Between two ADRs, the newer one wins. |
 
 ## Index
