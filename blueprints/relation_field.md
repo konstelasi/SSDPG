@@ -48,6 +48,7 @@ Content points at other content. A post has an author, a product a category, a p
 - Importing and exporting entries that hold links. Entry import and export do not exist yet.
 - Cleaning up a link whose entry was deleted for good. The link stays and is shown as "Deleted entry".
 - How a relation value appears to an outside app through the content API, as an id only or with the name beside it. The content API's own contract blueprint settles it.
+- An ADR that freezes the stored shape of the settings and the values. It is written before the first install holds data in that shape, and until then the shape lives in this blueprint.
 
 ## Acceptance criteria
 
@@ -127,11 +128,6 @@ The settings hold the linked model, the label field and whether several are allo
 The key `link` holds the linked model and the label field. That is a different use of the word from a link between entries.
 
 StarDust, the library that stores the entries, can't join models or filter on an entry's own id. Linked entries are fetched by id, grouped by linked model, one fetch per entry. A batch fetch, one call for several entries, would change how they are fetched and nothing else in this blueprint.
-
-## Not decided yet
-
-- Whether links per field are capped at all, and at what number. S3 and F3 say 50 as a starting value.
-- Whether an ADR should freeze the stored shape of the settings and the values once an install holds data in it. Today the shape lives here.
 
 ## Related documents
 
