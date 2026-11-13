@@ -45,7 +45,7 @@ const adrs = adrFiles.map((file) => {
   const heading = text.match(/^# (\d{4}) (.+)$/m);
   return {
     file, text, name: file.slice(5), number: file.slice(5, 9), title: heading?.[2] ?? '', headingNumber: heading?.[1],
-    status: field(text, 'Status'), created: field(text, 'Created'), ruled: field(text, 'Ruled'), accepted: field(text, 'Accepted'),
+    status: field(text, 'Status'), created: field(text, 'Created'), ruled: field(text, 'Ruled'), accepted: field(text, 'Accepted'), amended: field(text, 'Amended'),
   };
 });
 const adrByNumber = new Map(adrs.map((a) => [a.number, a]));
@@ -59,6 +59,11 @@ for (const adr of adrs) {
   if (!isDate(adr.created)) fail(file, 'needs a Created date');
   if (!adr.ruled) fail(file, 'needs a Ruled line');
   if (adr.status === 'Accepted' && !isDate(adr.accepted)) fail(file, 'is Accepted but has no Accepted date');
+  if (adr.amended !== undefined) {
+    if (adr.status === 'Proposed') fail(file, 'is Proposed, so it needs no Amended line');
+    else if (!isDate(adr.amended)) fail(file, 'Amended must be a date');
+    else if (adr.accepted && adr.amended < adr.accepted) fail(file, 'is Amended before it was Accepted');
+  }
   if (!adrIndex.has(adr.name)) fail(file, 'has no row in adrs/README.md');
   else if (adrIndex.get(adr.name) !== adr.status) fail(file, `index says "${adrIndex.get(adr.name)}" but the header says "${adr.status}"`);
 
