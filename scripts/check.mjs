@@ -81,11 +81,26 @@ const blueprintIndex = indexRows('blueprints/README.md');
 const blueprints = blueprintFiles.map((file) => {
   const text = read(file);
   const undecided = text.split(/^## /m).find((s) => s.startsWith('Not decided yet\n'))?.slice('Not decided yet'.length).trim();
-  return { file, name: file.slice(11), title: text.match(/^# (.+)$/m)?.[1] ?? '', status: field(text, 'Status'), created: field(text, 'Created'), restsOn: field(text, 'Rests on'), undecided };
+  return { file, text, name: file.slice(11), title: text.match(/^# (.+)$/m)?.[1] ?? '', status: field(text, 'Status'), created: field(text, 'Created'), restsOn: field(text, 'Rests on'), undecided };
 });
+
+// A blueprint keeps the template's headings in order. "Not decided yet" may be left out once it is empty.
+const headingsOf = (text) => [...prose(text).matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
+const templateHeadings = headingsOf(read('blueprints/_template.md'));
 
 for (const bp of blueprints) {
   const { file } = bp;
+  const headings = headingsOf(bp.text);
+  const expected = headings.includes('Not decided yet') ? templateHeadings : templateHeadings.filter((h) => h !== 'Not decided yet');
+  if (headings.join('|') !== expected.join('|')) fail(file, `headings are "${headings.join('", "')}" but the template has "${expected.join('", "')}"`);
+
+  // Criterion ids are a letter and a number in the first cell of a table row. Every id a blueprint cites must be one of its rows.
+  const rowIds = [...bp.text.matchAll(/^\|\s*([A-Z]\d+)\s*\|/gm)].map((m) => m[1]);
+  for (const id of new Set(rowIds)) if (rowIds.filter((r) => r === id).length > 1) fail(file, `id ${id} is used twice`);
+  const cited = new Set([...bp.text.matchAll(/\(([A-Z]\d+(?:, [A-Z]\d+)*)\)/g)].flatMap((m) => m[1].split(', ')));
+  for (const m of prose(bp.text).matchAll(/\b[A-Z]\d+\b/g)) cited.add(m[0]);
+  for (const id of cited) if (!rowIds.includes(id)) fail(file, `cites id ${id}, which has no row`);
+
   if (!/^[a-z0-9_]+\.md$/.test(bp.name)) fail(file, 'file name must be lowercase with underscores');
   if (!BLUEPRINT_STATUS.test(bp.status ?? '')) fail(file, `status "${bp.status}" is not allowed`);
   if (!isDate(bp.created)) fail(file, 'needs a Created date');

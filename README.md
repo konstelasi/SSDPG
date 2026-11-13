@@ -90,7 +90,7 @@ Everything StarSystem serves to code written by others is a contract. That cover
 
 These documents say what StarSystem is and why. They do not give the order in which it is built, and they carry no phase, stage or step labels. A reader who was not in the planning cannot tell what such a label refers to.
 
-`node scripts/check.mjs` checks the rules above that a machine can check, such as punctuation, statuses, the indexes and the order of citations. It also lists the documents waiting for acceptance.
+`node scripts/check.mjs` checks the rules above that a machine can check, such as punctuation, statuses, the indexes, the order of citations, the headings of a blueprint and the criterion ids it cites. It also lists the documents waiting for acceptance.
 
 ## Repository structure
 
