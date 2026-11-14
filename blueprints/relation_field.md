@@ -127,7 +127,7 @@ The settings hold the linked model, the label field and whether several are allo
 
 The key `link` holds the linked model and the label field. That is a different use of the word from a link between entries.
 
-StarDust, the library that stores the entries, can't join models or filter on an entry's own id. Linked entries are fetched by id, grouped by linked model, one fetch per entry. A batch fetch, one call for several entries, would change how they are fetched and nothing else in this blueprint.
+StarDust, the library that stores the entries, can't join models or filter on an entry's own id. It can read many entries by id in one call, so the linked entries a page needs are read together by id, not one call per entry. An id that no longer resolves is left out of that read, and the link is then shown as "Deleted entry" (H4).
 
 ## Related documents
 
