@@ -5,6 +5,10 @@
 
 The terms the SSDPG documents use, in alphabetical order. If a term is not defined here, it has no authoritative meaning in this project. Each entry will point to the ADR or blueprint that governs the term once that document exists. The seed terms below are plain definitions and name no class, field or file, because no ADR governs them yet.
 
+### Ability
+
+The permission for one action on a site, such as editing entries or deleting a model. See [ADR 0004](adrs/0004-access-is-per-site.md).
+
 ### Bundled module
 
 A module that ships with StarSystem instead of being installed separately. The head is one.
@@ -24,6 +28,10 @@ The website side of a site, a module that turns entries into pages. It covers th
 ### Install
 
 One copy of StarSystem with its one database. It holds one site in the first version and can hold several later. See [ADR 0003](adrs/0003-a-site-is-found-by-its-domain.md).
+
+### Install owner
+
+The one account that stands above the sites. It may do everything on every site, and it alone updates StarSystem and manages its modules. See [ADR 0004](adrs/0004-access-is-per-site.md).
 
 ### Key
 
@@ -52,6 +60,10 @@ The checkbox field that a model names as its published switch. An entry with the
 ### Relation field
 
 A field that links an entry to entries of another model, such as a post's author pointing at an entry in Authors. It holds one entry, or several when the field allows it. See the [relation field blueprint](blueprints/relation_field.md).
+
+### Role
+
+A named set of abilities, such as Editor. A person holds one role on each site they belong to. See [ADR 0004](adrs/0004-access-is-per-site.md).
 
 ### Site
 

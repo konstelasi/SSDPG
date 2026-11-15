@@ -23,3 +23,4 @@ An ADR records one decision, the situation that called for it and what follows f
 | [`0001-shared-hosting-is-the-floor.md`](0001-shared-hosting-is-the-floor.md) | Proposed | StarSystem installs, runs and updates on shared hosting, from one zip, with no command line, Node, Redis or running program. |
 | [`0002-the-core-is-headless.md`](0002-the-core-is-headless.md) | Proposed | The core stores, validates, authorizes and serves content and has no public front end, and the website side is a module. |
 | [`0003-a-site-is-found-by-its-domain.md`](0003-a-site-is-found-by-its-domain.md) | Proposed | A site's content is kept apart from every other site on the install, and the request's domain says which site it is for. |
+| [`0004-access-is-per-site.md`](0004-access-is-per-site.md) | Proposed | A person holds one role per site, an ability allows one action, and the install owner stands above the sites. |
