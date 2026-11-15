@@ -21,3 +21,4 @@ An ADR records one decision, the situation that called for it and what follows f
 | :-- | :-- | :-- |
 | [`0000-record-decisions-as-adrs.md`](0000-record-decisions-as-adrs.md) | Accepted | Decisions that others depend on are recorded as ADRs, the documents outrank the code, and only the owner accepts. |
 | [`0001-shared-hosting-is-the-floor.md`](0001-shared-hosting-is-the-floor.md) | Proposed | StarSystem installs, runs and updates on shared hosting, from one zip, with no command line, Node, Redis or running program. |
+| [`0002-the-core-is-headless.md`](0002-the-core-is-headless.md) | Proposed | The core stores, validates, authorizes and serves content and has no public front end, and the website side is a module. |
