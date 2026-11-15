@@ -116,6 +116,19 @@ for (const bp of blueprints) {
 }
 for (const name of blueprintIndex.keys()) if (!blueprintFiles.includes(`blueprints/${name}`)) fail('blueprints/README.md', `lists ${name}, which does not exist`);
 
+// The lists of what is still to be written. A ruling carries its date, and a feature leaves its list once its blueprint exists.
+const section = (file, heading) => read(file).split(/^## /m).find((s) => s.startsWith(`${heading}\n`)) ?? '';
+const tableRows = (text) => text.split('\n').filter((l) => l.startsWith('|') && !/^\|[\s:|-]+\|$/.test(l)).slice(1).map((l) => l.split('|').slice(1, -1).map((c) => c.trim()));
+
+for (const [ruled, decision, home] of tableRows(section('adrs/README.md', 'Ruled and waiting to be written'))) {
+  if (!/^\d{4}-\d{2}-\d{2}( and \d{4}-\d{2}-\d{2})*$/.test(ruled)) fail('adrs/README.md', `the ruling "${decision.slice(0, 40)}" needs the date it was ruled`);
+  if (!home) fail('adrs/README.md', `the ruling "${decision.slice(0, 40)}" does not say where it will be recorded`);
+}
+for (const [feature, , restsOn] of tableRows(section('blueprints/README.md', 'Blueprints to come'))) {
+  if (blueprints.some((b) => b.title.toLowerCase() === feature.toLowerCase())) fail('blueprints/README.md', `"${feature}" has a blueprint, so it leaves "Blueprints to come"`);
+  for (const [, number] of (restsOn ?? '').matchAll(/ADR (\d{4})/g)) if (!adrByNumber.has(number)) fail('blueprints/README.md', `"${feature}" rests on ADR ${number}, which does not exist`);
+}
+
 const terms = [...read('glossary.md').matchAll(/^### (.+)$/gm)].map((m) => m[1]);
 terms.forEach((term, i) => {
   if (i > 0 && terms[i - 1].toLowerCase().localeCompare(term.toLowerCase(), 'en') > 0) fail('glossary.md', `"${term}" is out of alphabetical order`);

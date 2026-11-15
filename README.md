@@ -75,6 +75,7 @@ Every document starts as Proposed (an ADR) or Draft (anything else). Only the pr
 - A blueprint is accepted once every ADR it rests on is Accepted.
 - A blueprint is accepted with nothing left under "Not decided yet". A question that another document will settle moves to the blueprint's Non-goals, with a pointer to that document.
 - No document is accepted before the older ADRs it cites.
+- A ruling that no document records yet is kept, with its date, in the list "Ruled and waiting to be written" in the [ADR index](adrs/README.md). The same index lists the questions the owner has not ruled on, and the [blueprint index](blueprints/README.md) lists the features that have no blueprint yet.
 
 The documents waiting for acceptance are the ones marked Proposed or Draft in the indexes, and they are listed, oldest first, at the start of each working session.
 
@@ -90,7 +91,7 @@ Everything StarSystem serves to code written by others is a contract. That cover
 
 These documents say what StarSystem is and why. They do not give the order in which it is built, and they carry no phase, stage or step labels. A reader who was not in the planning cannot tell what such a label refers to.
 
-`node scripts/check.mjs` checks the rules above that a machine can check, such as punctuation, statuses, the indexes, the order of citations, the headings of a blueprint and the criterion ids it cites. It also lists the documents waiting for acceptance.
+`node scripts/check.mjs` checks the rules above that a machine can check, such as punctuation, statuses, the indexes, the order of citations, the headings of a blueprint and the criterion ids it cites. It also checks the lists of rulings and of blueprints to come, and lists the documents waiting for acceptance.
 
 ## Repository structure
 
