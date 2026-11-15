@@ -6,7 +6,7 @@ trigger: always_on
 
 Rules for this repository only. They add to `core.md` and win on a conflict. Do not edit `core.md` or the other synced guides here.
 
-This is a design repository. It holds decisions and specifications and no application code. Its one script, `scripts/check.mjs`, checks the documents. It is private for now and may become public after a sweep, so write every document as if a stranger will read it.
+This is a design repository. It holds decisions and specifications and no application code. Its one script, `scripts/check.mjs`, checks the documents. It is public. Write every document for a stranger, and keep out anything about the team, the business or private notes.
 
 ## Writing a document
 
@@ -30,6 +30,8 @@ This is a design repository. It holds decisions and specifications and no applic
 6. Draft no new ADR while five ADRs are Proposed, unless the owner asks for one. The owner is the only reviewer, so a long queue only goes stale.
 7. Mark a blueprint Implemented only after checking the StarSystem code against each of its acceptance criteria, and only with the owner's agreement. When the last piece of a feature lands in the code, check its blueprint then, so the status does not lag behind the code.
 8. A blueprint's "Not decided yet" section lists only what the owner still has to rule on in that blueprint. A question that another document will settle goes under Non-goals with a pointer to that document. The section is empty when the blueprint is accepted, and `scripts/check.mjs` fails an Accepted or Implemented blueprint that still has items there.
+9. This repository is the only record of the design. When the owner rules on something that no document records, add a row to "Ruled and waiting to be written" in `adrs/README.md` the same day, with the date and the decision in one or two sentences. Remove the row in the same change that drafts its ADR or blueprint. A question the owner has not ruled on goes under "Not ruled yet" in that file.
+10. A planned feature without a blueprint has a row under "Blueprints to come" in `blueprints/README.md`. Remove the row in the same change that drafts the blueprint.
 
 ## Talking to the owner
 
