@@ -21,6 +21,10 @@ A named place in core where a module attaches code, such as the moment before an
 
 The website side of a site, a module that turns entries into pages. It covers themes, the list of addresses and the Site page. The entry "About" in a Pages model appearing at `/about` is the head's work.
 
+### Install
+
+One copy of StarSystem with its one database. It holds one site in the first version and can hold several later. See [ADR 0003](adrs/0003-a-site-is-found-by-its-domain.md).
+
 ### Key
 
 A secret that an outside app sends with each request to say who it is, for example a booking form on another website that saves reservations as entries. A key stands for an account that is not a person.
@@ -48,3 +52,7 @@ The checkbox field that a model names as its published switch. An entry with the
 ### Relation field
 
 A field that links an entry to entries of another model, such as a post's author pointing at an entry in Authors. It holds one entry, or several when the field allows it. See the [relation field blueprint](blueprints/relation_field.md).
+
+### Site
+
+One website with its own content, kept apart from every other site on the same install and found by the domain of the request. See [ADR 0003](adrs/0003-a-site-is-found-by-its-domain.md).
