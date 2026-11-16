@@ -12,7 +12,7 @@ A content system built for a server its owner controls does not fit there, and m
 
 ## Decision
 
-StarSystem installs, runs and updates on shared hosting, and no feature of it may need more than that host gives.
+StarSystem installs, runs and updates on shared hosting, and no feature of it may need more than that host gives. That is a minimum and not a target. It limits what StarSystem may require, and it does not limit how far an install can grow.
 
 | The host has to give | StarSystem never needs on the host |
 | :-- | :-- |
@@ -23,7 +23,7 @@ StarSystem installs, runs and updates on shared hosting, and no feature of it ma
 
 Five rules follow from the table.
 
-1. A release is one zip that holds StarSystem together with everything it depends on, including Laravel 13, the framework it is built on. A person installs it by unpacking the zip on the host and opening the installer in a browser.
+1. A release is one zip that holds StarSystem together with everything it depends on, including Laravel 13, the framework it is built on. A person installs it by unpacking the zip on the host and opening the installer in a browser. The zip is the way a release is delivered and the way every host can use, and it does not stop an owner of their own server from installing another way.
 2. An update is applied from the admin, in a browser, and needs nothing the table rules out.
 3. Work that does not belong to one page view, such as sending queued mail, is done in small pieces. A cron line or a scheduled request to a URL starts each piece, and a piece finishes within the time a host allows one request.
 4. The right-hand column lists what StarSystem never requires, not what it never uses. Where the host does give one of those things, such as a queue worker, Redis, a command line or a long-running daemon of a dependency, StarSystem may use it for the same work. Every feature still completes without it, only more slowly, so such a thing is an accelerator and never a requirement. The same zip serves both kinds of host.
