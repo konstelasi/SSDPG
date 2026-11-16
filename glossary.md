@@ -15,7 +15,7 @@ A module that ships with StarSystem instead of being installed separately. The h
 
 ### Core
 
-What StarSystem keeps when every module is off. That is the admin, the model builder, roles, files and, once it is built, the content API.
+What StarSystem keeps when every module is off. That is the admin, the model builder, roles, files and, once it is built, the content API. See [ADR 0002](adrs/0002-the-core-is-headless.md).
 
 ### Entry value
 
@@ -31,7 +31,7 @@ The options saved once on a field, as a small JSON object, that say how the fiel
 
 ### Head
 
-The website side of a site, a module that turns entries into pages. It covers themes, the list of addresses and the Site page. The entry "About" in a Pages model appearing at `/about` is the head's work.
+The website side of a site, a module that turns entries into pages. It covers themes, the list of addresses and the Site page. The entry "About" in a Pages model appearing at `/about` is the head's work. See [ADR 0002](adrs/0002-the-core-is-headless.md).
 
 ### Install
 
