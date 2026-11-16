@@ -124,10 +124,10 @@ The [field settings](../glossary.md#field-settings), the options saved once on t
 Written out, the field settings of a relation field are
 
 ```json
-{ "link": { "model": 7, "label_field": "3f0c9a2e-…" }, "multiple": false }
+{ "target": { "model": 7, "label_field": "3f0c9a2e-…" }, "multiple": false }
 ```
 
-The key `link` holds the linked model and the label field. That is a different use of the word from a link between entries.
+The key `target` holds the linked model and the label field, the two settings that say what the field points at.
 
 StarDust, the library that stores the entries, can't join models or filter on an entry's own id. It can read many entries by id in one call, so the linked entries a page needs are read together by id, not one call per entry. An id that no longer resolves is left out of that read, and the link is then shown as "Deleted entry" (H4).
 
