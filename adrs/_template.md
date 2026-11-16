@@ -14,7 +14,19 @@ The choice itself, stated concretely. Give the rule in one sentence first, then 
 
 ## Consequences
 
-What becomes easier and what becomes harder. Include the trade-offs, the constraints it sets on later work and any side effects.
+Group the effects under three subheadings, each a bullet list with one effect per bullet. Drop a subheading that has nothing under it.
+
+### Positive
+
+- What becomes easier.
+
+### Negative
+
+- What becomes harder, the trade-offs, the constraints it sets on later work and any side effects.
+
+### Left open
+
+- What this ADR deliberately does not settle.
 
 <!--
 Ruled is the day the owner decided it, which may be before the text was written.
