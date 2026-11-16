@@ -36,8 +36,16 @@ Every front end is a client of the core, and the head is one of them. The core n
 
 ## Consequences
 
-A person chooses what they run without a second product to maintain. A new kind of front end, such as a page editor, is added as a module and leaves the core unchanged.
+### Positive
 
-The boundary has a price. Whatever the head needs from the core has to be offered to every module in the same way, which is more design work than letting the website reach into the core directly. A feature that sits between the two, such as which models are public, needs a ruling on which side owns it.
+- A person chooses what they run without a second product to maintain.
+- A new kind of front end, such as a page editor, is added as a module and leaves the core unchanged.
 
-This ADR does not settle how the head reads content, whether through the same contract an outside app gets or through a contract the core offers to modules.
+### Negative
+
+- Whatever the head needs from the core has to be offered to every module in the same way, which is more design work than letting the website reach into the core directly.
+- A feature that sits between the two, such as which models are public, needs a ruling on which side owns it.
+
+### Left open
+
+- How the head reads content, whether through the same contract an outside app gets or through a contract the core offers to modules.

@@ -32,8 +32,18 @@ The first version offers one site per install. Everything per site is stored per
 
 ## Consequences
 
-Several sites can later share one install, one database and one update, and an install that starts with one site needs no migration of its content when that day comes. A mistake in one site's content or settings cannot reach another site.
+### Positive
 
-Every piece of stored data and every request now needs a site, including in places where one site would not need it, and a feature that forgets it leaks one site's content into another. Each feature therefore has to say what it keeps per site and what per install. The domain becomes part of a site's identity, so changing a site's domain is a feature of its own.
+- Several sites can later share one install, one database and one update.
+- An install that starts with one site needs no migration of its content when that day comes.
+- A mistake in one site's content or settings cannot reach another site.
 
-What StarSystem shows when no site has the request's domain is left to the feature that manages sites and domains.
+### Negative
+
+- Every piece of stored data and every request now needs a site, including in places where one site would not need it, and a feature that forgets it leaks one site's content into another.
+- Each feature has to say what it keeps per site and what per install.
+- The domain becomes part of a site's identity, so changing a site's domain is a feature of its own.
+
+### Left open
+
+- What StarSystem shows when no site has the request's domain, which is left to the feature that manages sites and domains.

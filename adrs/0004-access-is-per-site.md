@@ -48,8 +48,17 @@ Three rules make up the decision.
 
 ## Consequences
 
-The question "what may this person do here" has one answer that an administrator can read from one role. Trust on one site says nothing about another, which is what lets several sites share an install.
+### Positive
 
-A person with unusual needs requires a role of their own, since two roles cannot be combined on one site, and a site with many such people collects many roles. Every new action in StarSystem or in a module needs its own ability before it can be offered. The install owner is a single account with full power, so losing it or its password is the most serious loss an install can have, and handing it to another account has to be possible.
+- The question "what may this person do here" has one answer that an administrator can read from one role.
+- Trust on one site says nothing about another, which is what lets several sites share an install.
 
-Which roles are built in, how a role is edited and who may give a role to whom are left to later documents.
+### Negative
+
+- A person with unusual needs requires a role of their own, since two roles cannot be combined on one site, and a site with many such people collects many roles.
+- Every new action in StarSystem or in a module needs its own ability before it can be offered.
+- The install owner is a single account with full power, so losing it or its password is the most serious loss an install can have, and handing it to another account has to be possible.
+
+### Left open
+
+- Which roles are built in, how a role is edited and who may give a role to whom, which are left to later documents.

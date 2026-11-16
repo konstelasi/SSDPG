@@ -37,8 +37,14 @@ flowchart TD
 
 ## Consequences
 
-Anyone with a hosting account can run StarSystem, without a developer and without a server of their own. The same zip also runs on a larger server, since that server gives everything the floor does.
+### Positive
 
-The costs are real. Background work is slower than with a running worker, because it advances only when the schedule fires. A feature that needs a running program or a second service is ruled out, or is redesigned to do without one. The release zip is larger because it carries its dependencies, and each release has to be built and tested as that zip.
+- Anyone with a hosting account can run StarSystem, without a developer and without a server of their own.
+- The same zip also runs on a larger server, since that server gives everything the floor does.
 
-The versions in the table are the ones the tests run on. Raising one of them drops installs that already work, so it is a new ADR.
+### Negative
+
+- Background work is slower than with a running worker, because it advances only when the schedule fires.
+- A feature that needs a running program or a second service is ruled out, or is redesigned to do without one.
+- The release zip is larger because it carries its dependencies, and each release has to be built and tested as that zip.
+- The versions in the table are the ones the tests run on. Raising one of them drops installs that already work, so it is a new ADR.
