@@ -17,9 +17,17 @@ A module that ships with StarSystem instead of being installed separately. The h
 
 What StarSystem keeps when every module is off. That is the admin, the model builder, roles, files and, once it is built, the content API.
 
+### Entry value
+
+The data saved on one entry for one field, such as `12` in a post's Author field. For a relation field it is the id of the linked entry, or a list of ids when several are allowed. See the [relation field blueprint](blueprints/relation_field.md).
+
 ### Extension point
 
 A named place in core where a module attaches code, such as the moment before an entry is saved.
+
+### Field settings
+
+The options saved once on a field, as a small JSON object, that say how the field behaves. What they hold depends on the field's type. The field settings of a relation field hold the linked model, the label field and whether several entries are allowed. See the [relation field blueprint](blueprints/relation_field.md).
 
 ### Head
 
