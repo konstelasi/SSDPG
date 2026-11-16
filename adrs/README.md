@@ -52,5 +52,4 @@ These questions are open. Each is settled with the owner in conversation, and it
 
 - How a module that ships with StarSystem is switched on after an install or an update, and whether a later switch-off by an admin is kept.
 - How the head reads content, through the same contract an outside app gets or through one the core offers to modules.
-- Which database engines StarSystem supports beyond MariaDB and MySQL, such as PostgreSQL on a larger server.
 - What the first version of StarSystem contains.

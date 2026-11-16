@@ -2,7 +2,7 @@
 
 - **Status:** Proposed
 - **Created:** 2026-11-15
-- **Ruled:** 2026-09-23, the versions on 2026-11-15, and the optional use of a running program on 2026-11-16
+- **Ruled:** 2026-09-23, the versions on 2026-11-15, and the optional use of a running program and the database engines on 2026-11-16
 
 ## Context
 
@@ -21,12 +21,13 @@ StarSystem installs, runs and updates on shared hosting, and no feature of it ma
 | A way to upload and unpack a zip | Redis, or any other service beside the database |
 | A cron line, or any service that requests a URL on a schedule | A program that keeps running, such as a queue worker |
 
-Four rules follow from the table.
+Five rules follow from the table.
 
 1. A release is one zip that holds StarSystem together with everything it depends on, including Laravel 13, the framework it is built on. A person installs it by unpacking the zip on the host and opening the installer in a browser.
 2. An update is applied from the admin, in a browser, and needs nothing the table rules out.
 3. Work that does not belong to one page view, such as sending queued mail, is done in small pieces. A cron line or a scheduled request to a URL starts each piece, and a piece finishes within the time a host allows one request.
 4. The right-hand column lists what StarSystem never requires, not what it never uses. Where the host does give one of those things, such as a queue worker, Redis, a command line or a long-running daemon of a dependency, StarSystem may use it for the same work. Every feature still completes without it, only more slowly, so such a thing is an accelerator and never a requirement. The same zip serves both kinds of host.
+5. StarSystem reaches the database only through StarDust, the database layer it is built on, so the engines it runs on are the ones StarDust supports. Today those are MariaDB and MySQL, which is why the table names them. Support for another engine is StarDust's work and not a decision of this ADR.
 
 For example, the same queued mail is picked up like this.
 
@@ -58,7 +59,4 @@ flowchart TD
 - A feature that uses an accelerator has two ways to run, and both have to be tested.
 - The release zip is larger because it carries its dependencies, and each release has to be built and tested as that zip.
 - The versions in the table are the ones the tests run on. Raising one of them drops installs that already work, so it is a new ADR.
-
-### Left open
-
-- Which database engines a larger server may use beyond MariaDB and MySQL, such as PostgreSQL.
+- A larger server cannot choose another database engine until StarDust supports one.
