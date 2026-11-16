@@ -20,7 +20,7 @@ An ADR records one decision, the situation that called for it and what follows f
 | ADR | Status | Summary |
 | :-- | :-- | :-- |
 | [`0000-record-decisions-as-adrs.md`](0000-record-decisions-as-adrs.md) | Accepted | Decisions that others depend on are recorded as ADRs, the documents outrank the code, and only the owner accepts. |
-| [`0001-shared-hosting-is-the-floor.md`](0001-shared-hosting-is-the-floor.md) | Proposed | StarSystem installs, runs and updates on shared hosting, from one zip, with no command line, Node, Redis or running program. |
+| [`0001-shared-hosting-is-the-floor.md`](0001-shared-hosting-is-the-floor.md) | Proposed | StarSystem installs, runs and updates on shared hosting, from one zip, with no command line, Node, Redis or running program required, and uses a running program where the host has one. |
 | [`0002-the-core-is-headless.md`](0002-the-core-is-headless.md) | Proposed | The core stores, validates, authorizes and serves content and has no public front end, and the website side is a module. |
 | [`0003-a-site-is-found-by-its-domain.md`](0003-a-site-is-found-by-its-domain.md) | Proposed | A site's content is kept apart from every other site on the install, and the request's domain says which site it is for. |
 | [`0004-access-is-per-site.md`](0004-access-is-per-site.md) | Proposed | A person holds one role per site, an ability allows one action, and the install owner stands above the sites. |
@@ -52,4 +52,5 @@ These questions are open. Each is settled with the owner in conversation, and it
 
 - How a module that ships with StarSystem is switched on after an install or an update, and whether a later switch-off by an admin is kept.
 - How the head reads content, through the same contract an outside app gets or through one the core offers to modules.
+- Which database engines StarSystem supports beyond MariaDB and MySQL, such as PostgreSQL on a larger server.
 - What the first version of StarSystem contains.
