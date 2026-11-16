@@ -48,7 +48,7 @@ Content points at other content. A post has an author, a product a category, a p
 - Importing and exporting entries that hold links. Entry import and export do not exist yet.
 - Cleaning up a link whose entry was deleted for good. The link stays and is shown as "Deleted entry".
 - How a relation value appears to an outside app through the content API, as an id only or with the name beside it. The content API's own contract blueprint settles it.
-- An ADR that freezes the stored shape of the settings and the values. It is written before the first install holds data in that shape, and until then the shape lives in this blueprint.
+- An ADR that freezes the stored shape of the [field settings](../glossary.md#field-settings) and the [entry values](../glossary.md#entry-value). It is written before the first install holds data in that shape, and until then the shape lives in this blueprint.
 
 ## Acceptance criteria
 
@@ -119,7 +119,9 @@ flowchart TD
 
 ## Technical sketch
 
-The settings hold the linked model, the label field and whether several are allowed. A value is the id of one entry, such as `12`, or a list of ids when several are allowed. Settings and values point at ids, never names, so a link survives a renamed model slug or field key. A single id saved before several was switched on reads as a list of one everywhere.
+The [field settings](../glossary.md#field-settings), the options saved once on the field, hold the linked model, the label field (the field of the linked model that names each entry, such as an author's `name`) and whether several entries are allowed. An [entry value](../glossary.md#entry-value), the data saved on one entry for this field, is the id of the linked entry, such as `12`, or a list of ids when several are allowed. Field settings and entry values point at ids, never names, so a link survives a renamed model slug (the model's name in URLs, such as `authors`) or field key (the field's name in data, such as `name`). An entry saved with a single id before several was switched on is read as a list of one, such as `[12]`, by the editor, the API and the public pages.
+
+Written out, the field settings of a relation field are
 
 ```json
 { "link": { "model": 7, "label_field": "3f0c9a2e-…" }, "multiple": false }
@@ -131,4 +133,4 @@ StarDust, the library that stores the entries, can't join models or filter on an
 
 ## Related documents
 
-- [Glossary](../glossary.md), entries for relation field and label field.
+- [Glossary](../glossary.md), entries for relation field, label field, field settings and entry value.
