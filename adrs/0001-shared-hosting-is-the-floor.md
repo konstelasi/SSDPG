@@ -1,8 +1,9 @@
 # 0001 Shared hosting is the floor
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Created:** 2026-11-15
 - **Ruled:** 2026-09-23, the versions on 2026-11-15, and the optional use of a running program on 2026-11-16
+- **Accepted:** 2026-11-17
 
 ## Context
 
