@@ -1,8 +1,9 @@
 # 0004 Access is per site
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Created:** 2026-11-15
 - **Ruled:** 2026-10-16
+- **Accepted:** 2026-11-17
 
 ## Context
 
