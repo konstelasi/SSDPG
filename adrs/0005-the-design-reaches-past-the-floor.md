@@ -8,7 +8,7 @@
 
 ADR 0001 fixes the floor. StarSystem must install, run and update on shared hosting, and no feature may require more than that host gives. A floor says what every install can count on, and it says nothing about how far an install may grow.
 
-A system designed only for its floor works until an install outgrows it. Then each shortcut that suited the floor becomes a rewrite, and the rewrite touches what installs have already stored. ADR 0002 makes this likely, because the core serves content to any number of front ends, so growth shows up as more data and more requests more than as more features.
+A system designed only for its floor works until an install, one copy of StarSystem, outgrows it. Then each shortcut that suited the floor becomes a rewrite, and the rewrite touches what installs have already stored. ADR 0002 makes this likely, because the core serves content to any number of front ends, which are the websites and apps that show it, so growth shows up as more data and more requests more than as more features.
 
 ## Decision
 
@@ -25,12 +25,15 @@ flowchart TD
 | :-- | :-- |
 | Floor | The least a host gives, as ADR 0001 lists it. StarSystem never requires more. |
 | Ceiling | How far an install can grow by giving StarSystem more, such as a running worker, a cache service or a bigger database machine. |
+| Worker | A program that stays running and does background jobs, such as sending the mail waiting in a queue. |
+| Cache | A store of answers kept ready, such as the list of published posts, so the database is not asked again. |
+| Outside app | A program or website that is not part of StarSystem and reads or writes its entries through the content API. |
 
 Four things grow, and each must stay open to growth.
 
 | What grows | What the design keeps open |
 | :-- | :-- |
-| Entries, the rows of content | Content is read in pages and never all at once, so a model with many entries costs no more per request than a small one. |
+| Entries, the pieces of content | Content is read a page at a time, which is a fixed number of entries per request, and never all at once, so a model with many entries costs no more per request than a small one. |
 | Files, the bytes a site stores | Files are reached through one place, so where the bytes live can change without touching any entry. |
 | Requests, from outside apps and from the website side | A read can be served from a cache, so more requests do not mean more work in the database. |
 | Background work, such as queued mail | The same work can run in small pieces on the floor or in one go on a worker, as ADR 0001 allows. |
@@ -48,7 +51,7 @@ ADR 0003 already follows this rule for sites. The first version offers one site 
 
 ### Positive
 
-- A larger install grows by giving StarSystem more, with no redesign and no migration of what it stores.
+- A larger install grows by giving StarSystem more, with no redesign and no rewrite of what it stores.
 - Nothing here raises what the floor requires, so an install on shared hosting is unaffected.
 
 ### Negative
