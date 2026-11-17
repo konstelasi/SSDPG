@@ -6,17 +6,17 @@
 
 ## Context
 
-One person or agency often runs several websites. Giving each website its own copy of StarSystem means one install, one database and one round of updates per website. Serving several websites from one copy avoids that, but only if the data of each website is kept apart from the start. Adding that separation after installs hold data would mean rewriting what they have stored.
+One person or agency often runs several websites. Giving each website its own copy of StarSystem, which is called an install and has its one database, means one database and one round of updates per website. Serving several websites from one copy avoids that, but only if the data of each website is kept apart from the start. Adding that separation after installs hold data would mean rewriting what they have stored.
 
 ## Decision
 
-A site is one website with its own content, kept apart from every other site on the same install. StarSystem finds the site a request is for from the request's domain, which is the host name in its address, such as `toko.example`, `www.toko.example` or `toko.co.id`. A site has one or more domains, and one of them is its main domain. A domain belongs to one site only, so two sites on one install are never told apart by the path after the domain. An install is one copy of StarSystem with its one database, and "tenant" is the common word for one of several sites sharing an install.
+A site is one website with its own content, kept apart from every other site on the same install. StarSystem finds the site a request is for from the request's domain, which is the host name in its address, such as `toko.example`, `www.toko.example` or `toko.co.id`. A site has one or more domains, and one of them is its main domain. A domain belongs to one site only, so two sites on one install are never told apart by the path after the domain. "Tenant" is the common word for one of several sites sharing an install.
 
 For example, an install that holds two sites answers like this.
 
 | A request arrives for | StarSystem serves |
 | :-- | :-- |
-| `toko.example/products` | The site Toko, with Toko's models, entries and files |
+| `toko.example/products` | The site Toko, with Toko's own content and files |
 | `www.toko.example/products` | The same site Toko, because `www.toko.example` is another domain of Toko |
 | `blog.example/products` | The site Blog, which has no access to anything of Toko's |
 
@@ -27,7 +27,7 @@ flowchart TD
     B -->|Blog| D["Only Blog's content is in reach"]
 ```
 
-What belongs to a site is stored with that site. That covers its models, its entries, its files, its settings and who may do what on it. What belongs to the install is shared by all its sites, which covers the code and its updates.
+What belongs to a site is stored with that site. That covers its models, which are kinds of content such as Product, its entries, which are single pieces of content such as one product, its files, its settings and who may do what on it. What belongs to the install is shared by all its sites, which covers the code and its updates.
 
 The first version offers one site per install. Everything per site is stored per site from that version on, so a later version can offer more sites without changing what an install has stored.
 
@@ -36,7 +36,7 @@ The first version offers one site per install. Everything per site is stored per
 ### Positive
 
 - Several sites can later share one install, one database and one update.
-- An install that starts with one site needs no migration of its content when that day comes.
+- An install that starts with one site needs no rewrite of what it has stored when that day comes.
 - A mistake in one site's content or settings cannot reach another site.
 
 ### Negative
