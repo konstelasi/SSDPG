@@ -6,7 +6,7 @@
 
 ## Context
 
-ADR 0003 keeps each site's content apart from every other site on the same install. Access has to follow the same line. A person who edits one site must not gain anything on another by that fact, and the same person may be trusted fully on one site and little on another. Some things belong to no site at all, such as updating StarSystem, and someone has to be allowed to do them.
+ADR 0003 keeps each site's content apart from every other site on the same install, which is one copy of StarSystem. Access has to follow the same line. A person who edits one site must not gain anything on another by that fact, and the same person may be trusted fully on one site and little on another. Some things belong to no site at all, such as updating StarSystem, and someone has to be allowed to do them.
 
 ## Decision
 
@@ -15,7 +15,7 @@ What a person may do is decided per site. A person holds one role on each site t
 | Term | What it is |
 | :-- | :-- |
 | Account | One person's sign-in. It belongs to the install, so the same person signs in the same way on every site. |
-| Ability | The permission for one action, such as editing entries or deleting a model. |
+| Ability | The permission for one action, such as editing entries, the pieces of content, or deleting a model, a kind of content. |
 | Role | A named set of abilities, such as Editor. |
 | Install owner | The one account that stands above the sites. |
 
@@ -56,7 +56,7 @@ Three rules make up the decision.
 ### Negative
 
 - A person with unusual needs requires a role of their own, since two roles cannot be combined on one site, and a site with many such people collects many roles.
-- Every new action in StarSystem or in a module needs its own ability before it can be offered.
+- Every new action in StarSystem or in a module, a folder that holds one self-contained addition to StarSystem, needs its own ability before it can be offered.
 - The install owner is a single account with full power, so losing it or its password is the most serious loss an install can have, and handing it to another account has to be possible.
 
 ### Left open
