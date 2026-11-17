@@ -1,8 +1,9 @@
 # 0006 The database is reached through StarDust
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Created:** 2026-11-17
 - **Ruled:** 2026-11-16
+- **Accepted:** 2026-11-17
 
 ## Context
 
