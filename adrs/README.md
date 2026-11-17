@@ -25,6 +25,7 @@ An ADR records one decision, the situation that called for it and what follows f
 | [`0003-a-site-is-found-by-its-domain.md`](0003-a-site-is-found-by-its-domain.md) | Accepted | A site's content is kept apart from every other site on the install, and the request's domain says which site it is for. A site may have several domains. |
 | [`0004-access-is-per-site.md`](0004-access-is-per-site.md) | Proposed | A person holds one role per site, an ability allows one action, and the install owner stands above the sites. |
 | [`0005-the-design-reaches-past-the-floor.md`](0005-the-design-reaches-past-the-floor.md) | Proposed | StarSystem is designed for its ceiling as well as its floor, and no floor shortcut may block a larger install from growing. |
+| [`0006-the-database-is-reached-through-stardust.md`](0006-the-database-is-reached-through-stardust.md) | Proposed | StarSystem reads and writes its database only through StarDust, so its engines are the ones StarDust supports. |
 
 ## Ruled and waiting to be written
 
