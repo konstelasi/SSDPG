@@ -1,8 +1,9 @@
 # 0003 A site is a tenant found by its domain
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Created:** 2026-11-15
 - **Ruled:** 2026-09-23, and several domains for one site on 2026-11-17
+- **Accepted:** 2026-11-17
 
 ## Context
 
