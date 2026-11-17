@@ -22,8 +22,16 @@ flowchart TD
 
 | Term | What it is |
 | :-- | :-- |
-| Core | What StarSystem keeps when every module is off. That is the admin, the model builder, roles, files and the content API. |
-| Head | The website side of a site, a module. It holds the themes, the list of addresses and the Site page. The entry "About" appearing at `/about` is the head's work. |
+| Core | What StarSystem keeps when every module is off. That is the admin, the screens where staff manage the site, the model builder, roles, files and the content API. |
+| Module | A folder that holds one self-contained addition to StarSystem, such as the website side. |
+| Head | The website side of a site, a module. It holds the themes, which set how pages look, the list of addresses and the Site page. The entry "About" appearing at `/about` is the head's work. |
+| Front end | What a visitor or an app uses to reach content, such as a website or a mobile app. It is a client of the core, meaning it asks the core for content. |
+| Entry | One piece of content, such as the page "About". |
+| Model | A kind of content with its own fields, such as Post or Product. |
+| Model builder | The admin screens where a person defines models. |
+| Content API | The addresses an outside app uses to read and write entries. |
+| Contract | A fixed list of what two parts may ask of each other, such as the addresses and fields of the content API. |
+| Validate and authorize | To validate is to check content against its model, such as refusing a Post with no title. To authorize is to check that the person may do the action. |
 
 The same core gives two products.
 
