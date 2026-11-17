@@ -30,7 +30,7 @@ Every feature below is planned and has no blueprint yet. The list gives no order
 
 | Feature | What its blueprint will specify | Rests on |
 | :-- | :-- | :-- |
-| Installer and first run | The requirements check, the database setup, and the first account becoming the install owner. | ADR 0001, ADR 0004 |
+| Installer and first run | The requirements check, the database setup, and the first account becoming the install owner. | ADR 0001, ADR 0006, ADR 0007 |
 | Sites and domains | What a site is, how a domain finds it, and what is kept per site against per install. | ADR 0003 |
 | People, roles and abilities | Accounts, the built-in roles, and how an ability is defined and given. | ADR 0004, the limits of handing out access, limited abilities |
 | Invites and mail | Invitations, mail setup, and what happens on a host with no mail. | ADR 0004 |
@@ -46,7 +46,7 @@ Every feature below is planned and has no blueprint yet. The list gives no order
 | Modules | The manifest, loading, safe mode, the abilities a module declares, and bundled modules. A contract. | What a module is |
 | Extension points | The points the core offers, such as an entry being written or checked. A contract. | Extension points |
 | Module admin pages | The page host, menu items, and the versioned set of components. A contract. | Module admin pages |
-| Updates and releases | The feed, its signature, download and resume, applying an update, and what a failed update leaves behind. A contract. | ADR 0001, signed releases |
+| Updates and releases | The feed, its signature, download and resume, applying an update, and what a failed update leaves behind. A contract. | ADR 0001, ADR 0007, signed releases |
 | Background work and health | The scheduled run, the health panel, and what a site shows when the schedule has not fired. | ADR 0001 |
 | Website module | Themes, the list of addresses, the Site page, and how an entry becomes a page. | ADR 0002, what a module is, themes |
 | Page cache | Serving a page without rendering it each time. A stub at first. | Themes |
