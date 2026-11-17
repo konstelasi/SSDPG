@@ -26,7 +26,7 @@ An ADR records one decision, the situation that called for it and what follows f
 | [`0004-access-is-per-site.md`](0004-access-is-per-site.md) | Accepted | A person holds one role per site, and an ability allows one action. |
 | [`0005-the-design-reaches-past-the-floor.md`](0005-the-design-reaches-past-the-floor.md) | Proposed | StarSystem is designed for its ceiling as well as its floor, and no floor shortcut may block a larger install from growing. |
 | [`0006-the-database-is-reached-through-stardust.md`](0006-the-database-is-reached-through-stardust.md) | Accepted | StarSystem reads and writes its database only through StarDust, so its engines are the ones StarDust supports. |
-| [`0007-the-install-owner-stands-above-the-sites.md`](0007-the-install-owner-stands-above-the-sites.md) | Proposed | One account, the install owner, may do everything on every site and alone updates StarSystem and manages its modules. |
+| [`0007-the-install-owner-stands-above-the-sites.md`](0007-the-install-owner-stands-above-the-sites.md) | Accepted | One account, the install owner, may do everything on every site and alone updates StarSystem and manages its modules. |
 
 ## Ruled and waiting to be written
 

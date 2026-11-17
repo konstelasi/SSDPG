@@ -1,8 +1,9 @@
 # 0007 The install owner stands above the sites
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Created:** 2026-11-17
 - **Ruled:** 2026-10-16
+- **Accepted:** 2026-11-17
 
 ## Context
 
