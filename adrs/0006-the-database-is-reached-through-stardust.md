@@ -29,4 +29,4 @@ flowchart LR
 ### Negative
 
 - A need that StarDust does not meet today is either added to StarDust or waits. A feature does not meet it by querying the database itself.
-- A larger server cannot choose another database engine until StarDust supports one.
+- No install can use another database engine until StarDust supports one.
