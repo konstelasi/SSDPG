@@ -21,12 +21,23 @@ StarSystem installs, runs and updates on shared hosting, and no feature of it ma
 | A way to upload and unpack a zip | Redis, or any other service beside the database |
 | A cron line, or any service that requests a URL on a schedule | A program that keeps running, such as a queue worker |
 
+The table uses a few terms that need a plain meaning.
+
+| Term | What it is |
+| :-- | :-- |
+| Cron line | One entry in the host's scheduler, such as "run this command every minute". |
+| SSH | A way to type commands on the server from another computer. |
+| Composer | A tool that downloads the code libraries a PHP program uses. |
+| Node | A program that runs JavaScript on the server. |
+| Redis | A service that keeps data in memory beside the database, so frequent answers are ready without asking the database. |
+| Queue worker | A program that stays running and does the jobs waiting in a queue, such as mail waiting to be sent. |
+
 Five rules follow from the table.
 
 1. A release is one zip that holds StarSystem together with everything it depends on, including Laravel 13, the framework it is built on. A person installs it by unpacking the zip on the host and opening the installer in a browser. The zip is the way a release is delivered and the way every host can use, and it does not stop an owner of their own server from installing another way.
-2. An update is applied from the admin, in a browser, and needs nothing the table rules out.
+2. An update is applied from the admin, the screens where staff manage the site, in a browser, and needs nothing the table rules out.
 3. Work that does not belong to one page view, such as sending queued mail, is done in small pieces. A cron line or a scheduled request to a URL starts each piece, and a piece finishes within the time a host allows one request.
-4. The right-hand column lists what StarSystem never requires, not what it never uses. Where the host does give one of those things, such as a queue worker, Redis, a command line or a long-running daemon of a dependency, StarSystem may use it for the same work. Every feature still completes without it, only more slowly, so such a thing is an accelerator and never a requirement. The same zip serves both kinds of host.
+4. The right-hand column lists what StarSystem never requires, not what it never uses. Where the host does give one of those things, such as a queue worker, Redis, a command line or another program that keeps running, StarSystem may use it for the same work. Every feature still completes without it, only more slowly, so such a thing is an accelerator and never a requirement. The same zip serves both kinds of host.
 5. StarSystem reaches the database only through StarDust, the database layer it is built on, so the engines it runs on are the ones StarDust supports. Today those are MariaDB and MySQL, which is why the table names them. Support for another engine is StarDust's work and not a decision of this ADR.
 
 For example, the same queued mail is picked up like this.
