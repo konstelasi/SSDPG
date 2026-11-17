@@ -6,7 +6,7 @@
 
 ## Context
 
-ADR 0003 keeps each site's content apart from every other site on the same install, which is one copy of StarSystem. Access has to follow the same line. A person who edits one site must not gain anything on another by that fact, and the same person may be trusted fully on one site and little on another. Some things belong to no site at all, such as updating StarSystem, and someone has to be allowed to do them.
+ADR 0003 keeps each site's content apart from every other site on the same install, which is one copy of StarSystem. Access has to follow the same line. A person who edits one site must not gain anything on another by that fact, and the same person may be trusted fully on one site and little on another.
 
 ## Decision
 
@@ -17,7 +17,6 @@ What a person may do is decided per site. A person holds one role on each site t
 | Account | One person's sign-in. It belongs to the install, so the same person signs in the same way on every site. |
 | Ability | The permission for one action, such as editing entries, the pieces of content, or deleting a model, a kind of content. |
 | Role | A named set of abilities, such as Editor. |
-| Install owner | The one account that stands above the sites. |
 
 An install with two sites could hold these rows.
 
@@ -31,20 +30,17 @@ Rina may delete a model on Toko and may not on Blog. Sam has no row for Toko, so
 
 ```mermaid
 flowchart TD
-    A[A person tries an action on a site] --> B{Is this person the install owner?}
-    B -->|yes| F[Allowed]
-    B -->|no| C{Does this person hold a role on this site?}
+    A[A person tries an action on a site] --> C{Does this person hold a role on this site?}
     C -->|no| G[Refused]
     C -->|yes| D{Does that role hold the ability for this action?}
-    D -->|yes| F
+    D -->|yes| F[Allowed]
     D -->|no| G
 ```
 
-Three rules make up the decision.
+Two rules make up the decision.
 
 1. One role per person per site. A person who needs a different mix of abilities gets a role made for it, so there is one place to look for what someone may do.
 2. One ability per action. Editing entries and trashing entries are two abilities, so a role can hold one without the other.
-3. The install owner stands above the sites. That account may do everything on every site without holding a role there, and it alone does what belongs to the install and to no site, which is updating StarSystem and managing its modules.
 
 ## Consequences
 
@@ -57,8 +53,8 @@ Three rules make up the decision.
 
 - A person with unusual needs requires a role of their own, since two roles cannot be combined on one site, and a site with many such people collects many roles.
 - Every new action in StarSystem or in a module, a folder that holds one self-contained addition to StarSystem, needs its own ability before it can be offered.
-- The install owner is a single account with full power, so losing it or its password is the most serious loss an install can have, and handing it to another account has to be possible.
 
 ### Left open
 
+- What belongs to no site, such as updating StarSystem, and who may do it.
 - Which roles are built in, how a role is edited and who may give a role to whom, which are left to later documents.

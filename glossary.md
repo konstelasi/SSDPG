@@ -39,7 +39,7 @@ One copy of StarSystem with its one database. It holds one site in the first ver
 
 ### Install owner
 
-The one account that stands above the sites. It may do everything on every site, and it alone updates StarSystem and manages its modules. See [ADR 0004](adrs/0004-access-is-per-site.md).
+The one account that stands above the sites. It may do everything on every site, and it alone updates StarSystem and manages its modules. See [ADR 0007](adrs/0007-the-install-owner-stands-above-the-sites.md).
 
 ### Key
 
