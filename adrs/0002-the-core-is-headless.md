@@ -1,8 +1,9 @@
 # 0002 The core is headless and the website side is a module
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Created:** 2026-11-15
 - **Ruled:** 2026-10-24
+- **Accepted:** 2026-11-17
 
 ## Context
 
