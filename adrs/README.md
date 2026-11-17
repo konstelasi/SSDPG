@@ -22,7 +22,7 @@ An ADR records one decision, the situation that called for it and what follows f
 | [`0000-record-decisions-as-adrs.md`](0000-record-decisions-as-adrs.md) | Accepted | Decisions that others depend on are recorded as ADRs, the documents outrank the code, and only the owner accepts. |
 | [`0001-shared-hosting-is-the-floor.md`](0001-shared-hosting-is-the-floor.md) | Proposed | StarSystem installs, runs and updates on shared hosting, from one zip, with no command line, Node, Redis or running program required, and uses a running program where the host has one. |
 | [`0002-the-core-is-headless.md`](0002-the-core-is-headless.md) | Proposed | The core stores, validates, authorizes and serves content and has no public front end, and the website side is a module. |
-| [`0003-a-site-is-found-by-its-domain.md`](0003-a-site-is-found-by-its-domain.md) | Proposed | A site's content is kept apart from every other site on the install, and the request's domain says which site it is for. |
+| [`0003-a-site-is-found-by-its-domain.md`](0003-a-site-is-found-by-its-domain.md) | Proposed | A site's content is kept apart from every other site on the install, and the request's domain says which site it is for. A site may have several domains. |
 | [`0004-access-is-per-site.md`](0004-access-is-per-site.md) | Proposed | A person holds one role per site, an ability allows one action, and the install owner stands above the sites. |
 | [`0005-the-design-reaches-past-the-floor.md`](0005-the-design-reaches-past-the-floor.md) | Proposed | StarSystem is designed for its ceiling as well as its floor, and no floor shortcut may block a larger install from growing. |
 

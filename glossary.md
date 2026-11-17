@@ -75,4 +75,4 @@ A named set of abilities, such as Editor. A person holds one role on each site t
 
 ### Site
 
-One website with its own content, kept apart from every other site on the same install and found by the domain of the request. See [ADR 0003](adrs/0003-a-site-is-found-by-its-domain.md).
+One website with its own content, kept apart from every other site on the same install and found by the domain of the request. A site may have several domains. See [ADR 0003](adrs/0003-a-site-is-found-by-its-domain.md).
