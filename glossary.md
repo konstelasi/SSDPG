@@ -1,6 +1,5 @@
 # Glossary
 
-- **Status:** Draft
 - **Created:** 2026-10-23
 
 The terms the SSDPG documents use, in alphabetical order. If a term is not defined here, it has no authoritative meaning in this project. Each entry will point to the ADR or blueprint that governs the term once that document exists. The seed terms below are plain definitions and name no class, field or file, because no ADR governs them yet.

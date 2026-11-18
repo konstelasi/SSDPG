@@ -49,7 +49,7 @@ Core is what StarSystem keeps when every module is off. The head is the website 
 | :-- | :-- | :-- |
 | [`adrs/`](adrs/) | One decision per file, with the index of all of them. | See the index |
 | [`blueprints/`](blueprints/) | One feature per file, written before it is built. | See the index |
-| [`glossary.md`](glossary.md) | What each project term means. | Draft |
+| [`glossary.md`](glossary.md) | What each project term means. | Kept current, no status |
 | [`architecture_blueprint.md`](architecture_blueprint.md) | The synthesis beneath the ADRs, written last. | Stub |
 | [`schemas/schema_reference.md`](schemas/schema_reference.md) | The tables and settings shapes, as a specification. | Stub |
 

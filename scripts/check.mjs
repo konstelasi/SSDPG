@@ -141,11 +141,9 @@ if (errors.length) {
   console.log('No problems found.');
 }
 
-const glossary = read('glossary.md');
 const waiting = [
   ...adrs.filter((a) => a.status === 'Proposed').map((a) => ({ created: a.created, name: `ADR ${a.number}`, status: a.status, title: a.title })),
   ...blueprints.filter((b) => b.status === 'Draft').map((b) => ({ created: b.created, name: b.name, status: b.status, title: b.title })),
-  ...(field(glossary, 'Status') === 'Draft' ? [{ created: field(glossary, 'Created'), name: 'glossary.md', status: 'Draft', title: 'Glossary' }] : []),
 ].sort((a, b) => `${a.created}${a.name}`.localeCompare(`${b.created}${b.name}`));
 
 console.log('\nWaiting for acceptance, oldest first');
