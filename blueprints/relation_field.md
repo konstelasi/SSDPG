@@ -1,7 +1,8 @@
 # Relation field
 
-- **Status:** Draft
+- **Status:** Accepted
 - **Created:** 2026-11-10
+- **Accepted:** 2026-11-20
 - **Rests on:** none
 
 ## At a glance

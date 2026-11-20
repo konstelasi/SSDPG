@@ -22,7 +22,7 @@ Implemented means the code meets every acceptance criterion in the blueprint.
 
 | Blueprint | Status | Summary |
 | :-- | :-- | :-- |
-| [`relation_field.md`](relation_field.md) | Draft | An entry links to entries of another model, who sees the links, and what deleting the other side does. |
+| [`relation_field.md`](relation_field.md) | Accepted | An entry links to entries of another model, who sees the links, and what deleting the other side does. |
 
 ## Blueprints to come
 
