@@ -10,7 +10,7 @@ The permission for one action on a site, such as editing entries or deleting a m
 
 ### Bundled module
 
-A module that ships with StarSystem instead of being installed separately. The head is one.
+A module that ships with StarSystem instead of being installed separately. It has the same folder and manifest as any other module. The head is one. See [ADR 0008](adrs/0008-a-module-is-a-folder-with-a-manifest.md).
 
 ### Core
 
@@ -48,9 +48,13 @@ A secret that an outside app sends with each request to say who it is, for examp
 
 The field of the linked model whose value names a linked entry, such as the name of an author. See the [relation field blueprint](blueprints/relation_field.md).
 
+### Manifest
+
+The one file in a module's folder that declares what the module is and what it adds. See [ADR 0008](adrs/0008-a-module-is-a-folder-with-a-manifest.md).
+
 ### Module
 
-A folder that holds one self-contained addition to StarSystem, described by a manifest that StarSystem reads.
+A folder that holds one self-contained addition to StarSystem, described by its manifest. It installs from a zip without Composer. See [ADR 0008](adrs/0008-a-module-is-a-folder-with-a-manifest.md).
 
 ### Page host
 

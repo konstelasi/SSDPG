@@ -27,6 +27,7 @@ An ADR records one decision, the situation that called for it and what follows f
 | [`0005-the-design-reaches-past-the-floor.md`](0005-the-design-reaches-past-the-floor.md) | Proposed | StarSystem is designed for its ceiling as well as its floor, and no floor shortcut may block a larger install from growing. |
 | [`0006-the-database-is-reached-through-stardust.md`](0006-the-database-is-reached-through-stardust.md) | Accepted | StarSystem reads and writes its database only through StarDust, so its engines are the ones StarDust supports. |
 | [`0007-the-install-owner-stands-above-the-sites.md`](0007-the-install-owner-stands-above-the-sites.md) | Accepted | One account, the install owner, may do everything on every site and alone updates StarSystem and manages its modules. |
+| [`0008-a-module-is-a-folder-with-a-manifest.md`](0008-a-module-is-a-folder-with-a-manifest.md) | Proposed | A module is a folder with a manifest that declares what it is and what it adds, and it installs from a zip without Composer. |
 
 ## Ruled and waiting to be written
 
@@ -34,7 +35,6 @@ The owner has ruled on each decision below, and no document records it yet. A ro
 
 | Ruled | Decision | Will be recorded in |
 | :-- | :-- | :-- |
-| 2026-11-15 | A module is a folder with a manifest, one file that declares what the module is and what it adds, so a module installs from a zip without Composer. | An ADR on what a module is |
 | 2026-11-15 | A module attaches to the core through typed extension points, which are fixed classes with fixed fields and never free-form names, because a typo in a free-form name fails silently. | An ADR on extension points |
 | 2026-10-25 | A module gets admin pages through a page host. It lists its pages and menu items in its manifest and builds them from components and colour variables the core hands over, a set that is versioned. | An ADR on module admin pages |
 | 2026-11-15 | Themes belong to the website module, which renders them as templates, and the core knows nothing about them. | An ADR on themes |

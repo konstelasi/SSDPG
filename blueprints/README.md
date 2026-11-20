@@ -37,18 +37,18 @@ Every feature below is planned and has no blueprint yet. The list gives no order
 | Sign-in security | Two-factor sign-in, requiring it by role, sessions, and changing a password or an email. | ADR 0004 |
 | Activity log | What is recorded, who may read it, and how long it is kept. | ADR 0004 |
 | Model builder | Models, fields, the drag-and-drop canvas, the live preview, and what a change to a model goes through. | Extension points |
-| Field types | The field types of the first version, and how a module adds one. | What a module is, extension points |
+| Field types | The field types of the first version, and how a module adds one. | ADR 0008, extension points |
 | Entries | Forms, lists, filters, authorship, the published box, trash, restore and delete for good. | Limited abilities |
 | Media library | Folders, uploads, the file picker, and how a file is served. | ADR 0001 |
 | Public access | Which models are public, and which field publishes an entry. | What a caller without a key sees |
 | Content API | The endpoints, the wire format, filters, paging and errors. A contract. | Where the content API lives, what a caller without a key sees, the API's addresses, versions and errors |
 | API keys | Creating a key, showing it once, rotating it and giving it permissions. | What a key is, key permissions |
-| Modules | The manifest, loading, safe mode, the abilities a module declares, and bundled modules. A contract. | What a module is |
+| Modules | The manifest, loading, safe mode, the abilities a module declares, and bundled modules. A contract. | ADR 0008 |
 | Extension points | The points the core offers, such as an entry being written or checked. A contract. | Extension points |
 | Module admin pages | The page host, menu items, and the versioned set of components. A contract. | Module admin pages |
 | Updates and releases | The feed, its signature, download and resume, applying an update, and what a failed update leaves behind. A contract. | ADR 0001, ADR 0007, signed releases |
 | Background work and health | The scheduled run, the health panel, and what a site shows when the schedule has not fired. | ADR 0001 |
-| Website module | Themes, the list of addresses, the Site page, and how an entry becomes a page. | ADR 0002, what a module is, themes |
+| Website module | Themes, the list of addresses, the Site page, and how an entry becomes a page. | ADR 0002, ADR 0008, themes |
 | Page cache | Serving a page without rendering it each time. A stub at first. | Themes |
 | Blocks field | A field that holds ordered blocks of registered types. A stub at first. | Extension points |
 | Page editor module | Visual page layouts. An idea, with no decision behind it yet. | nothing yet |
