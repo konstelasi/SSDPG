@@ -32,7 +32,7 @@ Every feature below is planned and has no blueprint yet. The list gives no order
 | :-- | :-- | :-- |
 | Installer and first run | The requirements check, the database setup, and the first account becoming the install owner. | ADR 0001, ADR 0006, ADR 0007 |
 | Sites and domains | What a site is, how a domain finds it, and what is kept per site against per install. | ADR 0003 |
-| People, roles and abilities | Accounts, the built-in roles, and how an ability is defined and given. | ADR 0004, the limits of handing out access, ADR 0010 |
+| People, roles and abilities | Accounts, the built-in roles, and how an ability is defined and given. | ADR 0004, ADR 0010, ADR 0011 |
 | Invites and mail | Invitations, mail setup, and what happens on a host with no mail. | ADR 0004 |
 | Sign-in security | Two-factor sign-in, requiring it by role, sessions, and changing a password or an email. | ADR 0004 |
 | Activity log | What is recorded, who may read it, and how long it is kept. | ADR 0004 |
