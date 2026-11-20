@@ -22,7 +22,7 @@ The data saved on one entry for one field, such as `12` in a post's Author field
 
 ### Extension point
 
-A named place in core where a module attaches code, such as the moment before an entry is saved.
+A place in the core where a module attaches code, such as the moment before an entry is saved. Each one is a fixed class with fixed fields, and a module never attaches by a free-form name. See [ADR 0009](adrs/0009-modules-attach-through-typed-extension-points.md).
 
 ### Field settings
 
