@@ -29,6 +29,7 @@ An ADR records one decision, the situation that called for it and what follows f
 | [`0007-the-install-owner-stands-above-the-sites.md`](0007-the-install-owner-stands-above-the-sites.md) | Accepted | One account, the install owner, may do everything on every site and alone updates StarSystem and manages its modules. |
 | [`0008-a-module-is-a-folder-with-a-manifest.md`](0008-a-module-is-a-folder-with-a-manifest.md) | Proposed | A module is a folder with a manifest that declares what it is and what it adds, and it installs from a zip without Composer. |
 | [`0009-modules-attach-through-typed-extension-points.md`](0009-modules-attach-through-typed-extension-points.md) | Proposed | A module attaches to the core only through extension points that are fixed classes with fixed fields, never by a free-form name. |
+| [`0010-abilities-can-be-limited.md`](0010-abilities-can-be-limited.md) | Proposed | An ability can be limited to one model or to the person's own entries, and grants add up. |
 
 ## Ruled and waiting to be written
 
@@ -39,7 +40,6 @@ The owner has ruled on each decision below, and no document records it yet. A ro
 | 2026-10-25 | A module gets admin pages through a page host. It lists its pages and menu items in its manifest and builds them from components and colour variables the core hands over, a set that is versioned. | An ADR on module admin pages |
 | 2026-11-15 | Themes belong to the website module, which renders them as templates, and the core knows nothing about them. | An ADR on themes |
 | 2026-11-15 | Nobody hands out more than they hold. A person assigns or edits only roles whose abilities they hold themselves, and every action on an account stays inside the acting site. | An ADR on the limits of handing out access |
-| 2026-10-16 | An ability can be limited to one model or to a person's own entries. Grants add up, and "own entries" is chosen per action. | An ADR on limited abilities |
 | 2026-10-26 | The content API is part of the core, with no separate gateway in front of it. Its contract is a blueprint of its own with a JSON Schema. | An ADR on where the content API lives |
 | 2026-10-25 | Outside apps can write entries as well as read them, and they do so with a key. A key is an account that is not a person. It cannot sign in and cannot manage keys. | An ADR on what a key is |
 | 2026-10-25 | A key's permissions are given per model and per action, and a person can only create a key with permissions they hold themselves. Publishing is a permission of its own, so a key without it saves entries unpublished. A key sees drafts only with the permission to see all entries of that model. A key never holds the permissions for users, roles, the model builder or key management. | An ADR on key permissions |

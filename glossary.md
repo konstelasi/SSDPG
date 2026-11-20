@@ -28,6 +28,10 @@ A place in the core where a module attaches code, such as the moment before an e
 
 The options saved once on a field, as a small JSON object, that say how the field behaves. What they hold depends on the field's type. The field settings of a relation field hold the linked model, the label field and whether several entries are allowed. See the [relation field blueprint](blueprints/relation_field.md).
 
+### Grant
+
+One ability as a role holds it, together with its limits, such as editing entries of Post, only the person's own. Grants in a role add up. See [ADR 0010](adrs/0010-abilities-can-be-limited.md).
+
 ### Head
 
 The website side of a site, a module that turns entries into pages. It covers themes, the list of addresses and the Site page. The entry "About" in a Pages model appearing at `/about` is the head's work. See [ADR 0002](adrs/0002-the-core-is-headless.md).
@@ -55,6 +59,10 @@ The one file in a module's folder that declares what the module is and what it a
 ### Module
 
 A folder that holds one self-contained addition to StarSystem, described by its manifest. It installs from a zip without Composer. See [ADR 0008](adrs/0008-a-module-is-a-folder-with-a-manifest.md).
+
+### Own entries
+
+The entries whose author is the person. A grant can be limited to them. See [ADR 0010](adrs/0010-abilities-can-be-limited.md).
 
 ### Page host
 

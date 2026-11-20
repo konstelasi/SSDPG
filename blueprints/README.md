@@ -32,13 +32,13 @@ Every feature below is planned and has no blueprint yet. The list gives no order
 | :-- | :-- | :-- |
 | Installer and first run | The requirements check, the database setup, and the first account becoming the install owner. | ADR 0001, ADR 0006, ADR 0007 |
 | Sites and domains | What a site is, how a domain finds it, and what is kept per site against per install. | ADR 0003 |
-| People, roles and abilities | Accounts, the built-in roles, and how an ability is defined and given. | ADR 0004, the limits of handing out access, limited abilities |
+| People, roles and abilities | Accounts, the built-in roles, and how an ability is defined and given. | ADR 0004, the limits of handing out access, ADR 0010 |
 | Invites and mail | Invitations, mail setup, and what happens on a host with no mail. | ADR 0004 |
 | Sign-in security | Two-factor sign-in, requiring it by role, sessions, and changing a password or an email. | ADR 0004 |
 | Activity log | What is recorded, who may read it, and how long it is kept. | ADR 0004 |
 | Model builder | Models, fields, the drag-and-drop canvas, the live preview, and what a change to a model goes through. | ADR 0009 |
 | Field types | The field types of the first version, and how a module adds one. | ADR 0008, ADR 0009 |
-| Entries | Forms, lists, filters, authorship, the published box, trash, restore and delete for good. | Limited abilities |
+| Entries | Forms, lists, filters, authorship, the published box, trash, restore and delete for good. | ADR 0010 |
 | Media library | Folders, uploads, the file picker, and how a file is served. | ADR 0001 |
 | Public access | Which models are public, and which field publishes an entry. | What a caller without a key sees |
 | Content API | The endpoints, the wire format, filters, paging and errors. A contract. | Where the content API lives, what a caller without a key sees, the API's addresses, versions and errors |
